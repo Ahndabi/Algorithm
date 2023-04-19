@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataStructure			// list 라고 하면 헷갈릴까봐 DataStructure 라고 바꿈
-{
+{								// C++의 list는 vector임.
 	internal class List<T>
 	{
 		private const int DefaultCapacity = 10;
@@ -101,6 +101,8 @@ namespace DataStructure			// list 라고 하면 헷갈릴까봐 DataStructure �
 			return default(T);
 		}
 
+		// Predicate : 반환형식이 bool 인 대리자
+		// match에 집어넣는 식이 그대로 match에 들어올 것임.
 		public int FindIndex(Predicate<T> match)
 		{
 			for(int i = 0; i <size; i++)
@@ -122,4 +124,10 @@ namespace DataStructure			// list 라고 하면 헷갈릴까봐 DataStructure �
 														// 원래 배열도 가비지콜렉터에 의해 사라지게 될 거야
 		}
 	}
+
+
+	// 이러한 연속적인 배열의 단점
+	// 중간 인덱스를 하나 지웠을 때, 그걸 지우고 그대로 냅둘 수 없음. (즉 빈공간을 남길 수 없음)
+	// 삽입과 삭제에서 그렇게 효율적이진 않다.. (접근은 좋은데!)
+	// 그래서 LinkedList가 이런 삽입과 삭제의 단점을 보완하여 나왔음.
 }

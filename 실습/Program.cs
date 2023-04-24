@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace 실습
 {
@@ -7,6 +8,5 @@ namespace 실습
 		static void Main()
 		{
 		}
-
 	}
 }
